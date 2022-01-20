@@ -1,5 +1,5 @@
 
-<h4>Figures: </h4>
+<h3>Figures </h3>
 
   <label>Figure name: </label><%= @figure.name %><br><br>
 
@@ -11,3 +11,8 @@
   <%@figure.landmarks.each do |landmark|%> 
   <label>Landmark name: </label><%=landmark.name%><br><br>
   <%end%>
+
+
+<a class="button" href="/figures/<%= @figure.id %>/edit">Edit Figure</a>
+<br>
+<a class="button" href="/figures">Figures</a>

@@ -20,10 +20,6 @@ class LandmarksController < ApplicationController
       @landmark.save
     end
 
-    if !params["figure"]["year_completed"].empty?
-      @landmark.figure = figure.create(name: params["figure"]["year_completed"])
-      @landmark.save
-    end
     redirect to "landmarks/#{@landmark.id}"
   end
 
@@ -52,45 +48,4 @@ class LandmarksController < ApplicationController
     redirect "landmarks/#{@landmark.id}"
   end
 end
-
-# get '/landmarks/new' do
-#   erb :'/landmarks/new'
-# end
-
-# post '/landmarks' do
-#   @landmark = Landmark.create(params[:landmark])
-
-#   if !params["landmark"]["name"].empty?
-#     @landmark.landmark == Landmark.create(name: params["landmark"]["name"])
-#     @landmark.save
-#   end
-
-#   if !params["landmark"]["year_completed"].empty?
-#     @landmark.landmark == Landmark.create(name: params["landmark"]["year_completed"])
-#     @landmark.save
-#   end
-#   redirect to "landmarks/#{@landmark.id}"
-# end
-
-
-# patch '/figures/:id' do
-#   if !params[:figure].keys.include?("title_ids")
-#     params[:figure]["title_ids"] = []
-#   end
-#   if !params[:figure].keys.include?("landmark_ids")
-#     params[:figure]["landmark_ids"] = []
-#   end
-#   @figure = Figure.find(params[:id])
-#   @figure.update(params["figure"])
-#   if !params["title"]["name"].empty?
-#     @figure.titles << Title.create(name: params["title"]["name"])
-#     # @figure.save
-#   end
-#   if !params["landmark"]["name"].empty?
-#     @figure.landmarks << Landmark.create(name: params["landmark"]["name"])
-#     # @figure.save
-#   end
-#   redirect "figures/#{@figure.id}"
-# end
-
 
